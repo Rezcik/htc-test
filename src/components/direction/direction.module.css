@@ -1,0 +1,44 @@
+.sort {
+    display: inline-block;
+    margin-left: auto;
+
+    width: 64px;
+}
+.wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.title {
+    margin: 0 0 22px 0;
+
+    font-family: 'Montserrat-Medium', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+
+    color: #000000;
+}
+.item {
+    width: 24px;
+    padding-bottom: 4px;
+
+    cursor: pointer;
+    border-bottom: 1px transparent dashed;
+}
+.item:nth-child(1) {
+    padding-bottom: 6px !important;
+}
+.item:hover {
+    border-color: black;
+}
+.item > svg {
+    fill: black;
+}
+.active {
+    border-color: red;
+}
+.active > svg {
+    fill: red;
+}

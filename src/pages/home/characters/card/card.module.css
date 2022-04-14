@@ -1,0 +1,106 @@
+.card {
+    display: flex;
+
+    margin: 30px 0;
+
+    background: #FFFFFF;
+    border: 1px dashed rgba(162, 162, 162, 0.6);
+    border-radius: 5px;
+
+    transition: 0.2s linear;
+    animation: 1s loading;
+}
+@keyframes loading {
+    0% {
+        transform: translate(0,-10px);
+        opacity: 0.0;
+    }
+    100% {
+        transform: translate(0,0);
+        opacity: 1;
+    }
+}
+.card:hover {
+    filter: drop-shadow(8px 8px 4px rgba(0, 0, 0, 0.4));
+}
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    margin: 0 15px;
+    max-height: 100px;
+}
+.column {
+    width: 350px;
+}
+.img {
+    border-radius: 5px 0 0 5px;
+    width: 162px;
+}
+.name {
+    margin: 15px 0 5px 15px;
+
+    font-family: 'Montserrat-Bold', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+
+    color: #000000;
+}
+.title {
+    display: inline-block;
+
+    margin-right: 13px;
+
+    width: 150px;
+
+    font-family: 'Montserrat-Regular', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 15px;
+
+    color: #1F4766;
+}
+.value {
+    display: inline-block;
+
+    width: 150px;
+
+    font-family: 'Montserrat-Medium', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+
+    color: #000000;
+}
+.item {
+    display: flex;
+
+    margin: 4px 0;
+}
+.status {
+    font-family: 'Montserrat-Medium', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+
+    color: black;
+}
+.dead > li {
+    color: #DF0000;
+    list-style-type: disc;
+}
+.alive > li {
+    color: #00CA51;
+    list-style-type: disc;
+}
+.unknown > li {
+    color: #FFC803;
+    list-style-type: disc;
+}

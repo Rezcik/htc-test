@@ -1,0 +1,81 @@
+.pagination {
+    display: flex;
+    justify-content: center;
+
+    margin: 0 auto 50px;
+
+    width: 100%;
+    user-select: none;
+}
+.prev, .next {
+    display: flex;
+    align-items: center;
+
+    background: transparent;
+    border: none;
+
+    font-family: 'Montserrat-Regular', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 15px;
+
+    cursor: pointer;
+}
+button:disabled > svg {
+    fill: gray !important;
+}
+.prev {
+    flex-direction: row-reverse;
+}
+.prev > svg, .next > svg {
+    fill: black;
+    transition: 0.2s linear;
+}
+.prev:hover > svg, .next:hover > svg {
+    fill: #FF0000;
+}
+.prev > span, .next > span {
+    margin: 0 10px;
+}
+
+.next > svg {
+    transform: rotate(180deg);
+}
+
+
+.pages {
+    display: flex;
+    margin: 0 50px;
+}
+.numberButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin: 0 15px;
+
+    width: 30px;
+    height: 30px;
+
+    font-family: 'Montserrat-Medium', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+
+    background: transparent;
+    border: 1px solid black;
+    cursor: pointer;
+    transition: 0.2s linear;
+}
+.numberButton:hover {
+    color: #FF0000;
+    border-color: #FF0000;
+
+    filter: drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.4));
+}
+.active {
+    color: #FF0000;
+    border-color: #FF0000;
+}

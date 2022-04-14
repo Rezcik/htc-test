@@ -1,0 +1,54 @@
+.card{
+    position: relative;
+    
+    max-width: 570px;
+    width: 100%;
+    max-height: 164px;
+}
+.column {
+    position: absolute;
+    top: -35px;
+    right: -20px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: end;
+
+    padding: 15px 0;
+    margin-left: auto;
+}
+.column > ul {
+    margin-right: 35px;
+}
+.status {
+    margin: 0 40px;
+}
+.favorites {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 40px;
+    height: 40px;
+
+    color: #FFFFFF;
+    background: #00A3FF;
+
+    border-radius: 50%;
+    border: 1px solid rgba(162, 162, 162, 0.6);
+
+    transition: 0.2s linear;
+    cursor: pointer;
+}
+.favorites:hover {
+    background: #008BDA;
+}
+
+.save {
+    background: #00CA51 !important;
+    transition: 0.3s;
+}
+.save > svg {
+    fill: white;
+}

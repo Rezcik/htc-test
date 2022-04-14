@@ -1,0 +1,38 @@
+.button {
+    padding: 20px;
+    margin: 0 16px;
+
+    width: 370px;
+    height: 670px;
+
+    background: #FFFFFF;
+    border: 1px dashed rgba(162, 162, 162, 0.6);
+    border-radius: 19px;
+
+    transition: 0.2s linear;
+}
+.button:hover {
+    transform: translate(-5px, -5px);
+    border: 1px solid rgba(162, 162, 162, 0.6);
+    filter: drop-shadow(8px 8px 4px rgba(0, 0, 0, 0.4));
+}
+.title, .descriptions {
+
+    font-family: 'Montserrat-Medium', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+
+    color: black;
+}
+
+.title {
+    margin: 18px 0;
+
+    font-size: 36px;
+    line-height: 44px;
+}
+
+.descriptions {
+    font-size: 16px;
+    line-height: 20px;
+}

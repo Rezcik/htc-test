@@ -1,0 +1,41 @@
+.title, .input {
+    font-family: 'Montserrat-Medium', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+}
+.title {
+    margin: 0 0 20px 0;
+
+    color: #000000;
+}
+.wrapper {
+    display: inline-block;
+    margin: 0 30px 0 0;
+}
+.input {
+    padding: 10px 13px;
+
+    height: 36px;
+
+    color: black;
+
+    background: rgba(162, 162, 162, 0.1);
+    border: 1px solid rgba(162, 162, 162, 0.6);
+    border-radius: 5px;
+
+    transition: 0.2s linear;
+}
+.input:hover {
+    border: 1px solid rgba(0, 0, 0, 0.45);
+}
+.input:focus {
+    border-color: #00A3FF;
+}
+.input370px {
+    width: 370px;
+}
+.input270px {
+    width: 270px;
+}

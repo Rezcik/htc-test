@@ -1,0 +1,45 @@
+.title {
+    display: flex;
+    align-items: center;
+
+    margin: 0 auto 30px 0;
+
+    width: 100%;
+    max-width: 1170px;
+
+    font-family: 'Montserrat-Regular', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+}
+
+.back {
+    display: flex;
+    align-items: center;
+
+    font-family: 'Montserrat-Regular', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+
+    cursor: pointer;
+    color: #000000;
+    background: none;
+    border: none;
+}
+.back > svg {
+    margin-right: 19px;
+
+    fill: black;
+
+    transition: 0.2s linear;
+}
+.back:hover > svg {
+    fill: #FF0000;
+    filter: drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.4));
+}
+.name {
+    margin-left: 417px;
+}

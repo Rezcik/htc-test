@@ -1,0 +1,10 @@
+
+.content {
+    display: flex;
+
+    margin: 0 auto 110px auto;
+
+    max-width: 1170px;
+    width: 100%;
+
+}

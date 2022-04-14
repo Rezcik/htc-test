@@ -1,0 +1,58 @@
+.card {
+    position: relative;
+    max-width: 1170px;
+    width: 100%;
+    max-height: 164px;
+}
+.column {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: end;
+
+    padding: 0 0 30px 0;
+    margin-left: auto;
+    height: 100%;
+}
+.favorites {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-left: auto;
+    padding: 0 13px 0 11px;
+
+    width: 240px;
+    height: 40px;
+
+    font-family: 'Montserrat-Bold', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 18px;
+
+    color: #FFFFFF;
+    background: #00A3FF;
+
+    border-radius: 5px;
+    border: 1px solid rgba(162, 162, 162, 0.6);
+
+    transition: 0.2s linear;
+    cursor: pointer;
+}
+.favorites:hover {
+    background: #008BDA;
+}
+.save {
+    background: transparent !important;
+    border: transparent;
+    color: #00CA51;
+    transition: 0.3s;
+}
+.save > svg {
+    fill: #00CA51;
+}

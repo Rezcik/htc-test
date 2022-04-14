@@ -1,0 +1,32 @@
+.button {
+    margin: 0 0 0 40px;
+    padding: 13px 32px;
+
+    font-family: 'Montserrat-Medium', sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+
+    border: 1px solid #000000;
+    border-radius: 5px;
+    background: none;
+
+    cursor: pointer;
+
+    transition: 0.2s linear;
+}
+.authorization {
+    color: white;
+    background: black;
+}
+.authorization:hover {
+    background: #1F4766;
+}
+.registration {
+    color: black;
+    background: none;
+}
+.registration:hover {
+    color: white;
+    background: #1F4766;
+}

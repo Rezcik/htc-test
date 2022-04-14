@@ -1,0 +1,53 @@
+.button {
+    width: 270px;
+    height: 54px;
+    background-size: cover;
+    border: 2px solid #00A3FF;
+    border-radius: 5px;
+    transition: 0.3s linear;
+}
+.button:nth-child(1) {
+    background-image: url("../../../assets/img/loc_min.png");
+}
+.button:nth-child(2) {
+    background-image: url("../../../assets/img/char_min.png");
+}
+.button:nth-child(3) {
+    background-image: url("../../../assets/img/epi_min.png");
+}
+.button:hover {
+    width: 430px;
+    height: 97px;
+    transform: translate(-5px, -5px);
+    border: 1px solid rgba(162, 162, 162, 0.6);
+    filter: drop-shadow(8px 8px 4px rgba(0, 0, 0, 0.4));
+}
+.button:hover .title {
+    font-size: 48px;
+    line-height: 59px;
+}
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    background: rgba(0,0,0, 0.3);
+}
+.title {
+    display: inline-block;
+    margin: 0 72px;
+
+    height: 100%;
+
+    font-family: 'Montserrat-Bold', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 32px;
+    color: white;
+
+    transition: 0.3s linear;
+}
+.img {
+    max-width: 430px;
+}

@@ -1,0 +1,24 @@
+
+.menu {
+    margin-right: auto;
+}
+.button {
+    margin: 0 14px;
+
+    font-family: 'Montserrat-Medium', sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    color: black;
+
+    text-decoration: none;
+    transition: 0.2s linear;
+}
+.button:hover {
+    color: #FF0000;
+}
+
+.active {
+    color: #FF0000;
+    border-bottom: 1px solid #FF0000;
+}

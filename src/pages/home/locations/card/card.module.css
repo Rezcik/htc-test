@@ -1,0 +1,114 @@
+.card {
+    position: relative;
+
+    margin: 30px 0;
+    padding: 11px 30px;
+
+    max-width: 570px;
+    width: 100%;
+
+    background: #FFFFFF;
+    border: 1px dashed rgba(162, 162, 162, 0.6);
+    border-radius: 5px;
+
+    transition: 0.2s linear;
+    animation: 1s loading;
+}
+.card:hover {
+    filter: drop-shadow(8px 8px 4px rgba(0, 0, 0, 0.4));
+}
+
+@keyframes loading {
+    0% {
+        transform: translate(0,-10px);
+        opacity: 0.0;
+    }
+    100% {
+        transform: translate(0,0);
+        opacity: 1;
+    }
+}
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+    max-height: 90px;
+}
+.name {
+    margin-bottom: 9px;
+
+    text-align: center;
+
+    font-family: 'Montserrat-Bold', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 44px;
+
+    color: #000000;
+}
+.title {
+    margin-bottom: 5px;
+
+    font-family: 'Montserrat-Regular', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 15px;
+
+    color: #1F4766;
+}
+.value {
+    margin-bottom: 5px;
+
+    font-family: 'Montserrat-Medium', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+
+    color: #000000;
+}
+.column {
+    margin-left: auto;
+    width: 283px;
+}
+.residents{
+    text-align: left;
+
+    font-size: 36px;
+    line-height: 44px;
+}
+
+.favorites {
+    position: absolute;
+    top: -20px;
+    right: -20px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 40px;
+    height: 40px;
+
+    color: #FFFFFF;
+    background: #00A3FF;
+
+    border-radius: 50%;
+    border: 1px solid rgba(162, 162, 162, 0.6);
+
+    cursor: pointer;
+    transition: 0.2s linear;
+}
+.favorites:hover {
+    background: #008BDA;
+}
+.save {
+    background: #00CA51 !important;
+    transition: 0.3s;
+}
+.save > svg {
+    fill: white;
+}
