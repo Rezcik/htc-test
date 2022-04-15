@@ -4,6 +4,7 @@
 }
 .button {
     margin: 0 14px;
+    padding-bottom: 8px;
 
     font-family: 'Montserrat-Medium', sans-serif;
     font-weight: 500;
@@ -18,7 +19,8 @@
     color: #FF0000;
 }
 
-.active {
+:global(.active) {
+    font-family: 'Montserrat-Bold', sans-serif;
     color: #FF0000;
     border-bottom: 1px solid #FF0000;
 }

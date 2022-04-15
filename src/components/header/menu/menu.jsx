@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link, NavLink} from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import styles from './menu.module.css';
 
 export function Menu() {
@@ -7,8 +7,8 @@ export function Menu() {
         <div className={styles.menu}>
             <nav>
                 <NavLink className={styles.button} to="/home">Главная</NavLink>
-                <NavLink className={styles.button} to="/favourites">Избранное</NavLink>
-                <NavLink className={styles.button} to="/about">О проекте</NavLink>
+                <NavLink className={styles.button} to="/favourites" >Избранное</NavLink>
+                <NavLink className={styles.button} to="/about" >О проекте</NavLink>
             </nav>
         </div>
     )

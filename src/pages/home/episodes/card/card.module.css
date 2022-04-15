@@ -103,15 +103,14 @@
     background: #008BDA;
 }
 .save {
-    background: #00CA51 !important;
-    transition: 0.3s;
-}
-.save {
+    justify-content: left;
+
     background: transparent !important;
     border: transparent;
     color: #00CA51;
     transition: 0.3s;
 }
 .save > svg {
+    margin-right: 10px;
     fill: #00CA51;
 }

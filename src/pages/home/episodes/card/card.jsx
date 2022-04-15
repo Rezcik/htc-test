@@ -22,16 +22,19 @@ export function Card({name, episode, air_date, characters, sort, url}) {
     return (
         <div className={card.card}>
             <p className={card.name}>{name}</p>
-
-            <button className={classNames(save? card.save : '', card.favorites)}
-                    onClick={() => setStorage(sort, url, save, setSave)}>
-                {save ?
-                    <Like/>
-                    :
-                    <AddFavourites/>
+                {save ? (
+                    <button className={classNames(save? card.save : '', card.favorites)}
+                            onClick={() => setStorage(sort, url, save, setSave)}>
+                        <Like/>
+                        <span>В избранном</span>
+                    </button>)
+                    :(
+                    <button className={card.favorites}
+                            onClick={() => setStorage(sort, url, save, setSave)}>
+                        <AddFavourites/>
+                        <span>Добавить в избранное</span>
+                    </button>)
                 }
-                <span>Добавить в избранное</span>
-            </button>
             <div className={card.wrapper}>
                 <div>
                     <p className={card.title}>Эпизод:</p>

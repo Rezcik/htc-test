@@ -7,17 +7,20 @@ import {Title} from "../../../components/title/title";
 import {Input} from "../../../components/input/input";
 
 export function Episodes() {
-    const [currentPage, setCurrentPage] = useState('https://rickandmortyapi.com/api/episode');
+    const [currentPage, setCurrentPage] = useState('https://rickandmortyapi.com/api/episode/?');
     const [data, setData] = useState({ results: [] });
     const [filter, setFilter] = useState({name: '', episode: ''});
 
     const setQuery = (filterName) => (value) => {
         setFilter(filter => ({...filter, [filterName]: filterName + '=' + value + '&'}));
-        setCurrentPage(`https://rickandmortyapi.com/api/episode/?${filter.name + filter.episode}`);
     };
 
     useEffect(() =>{
-        {Fetch({currentPage, setData})}
+        setCurrentPage(`https://rickandmortyapi.com/api/episode/?${filter.name + filter.episode}`);
+    },[filter]);
+
+    useEffect(() =>{
+        Fetch({currentPage, setData})
     },[currentPage]);
 
     return (
@@ -33,13 +36,13 @@ export function Episodes() {
                 <Input title='Поиск по эпизоду'
                        placeholder='Введите эпизод: '
                        width={true}
-                       setFilter={setQuery("type")}
+                       setFilter={setQuery("episode")}
                 />
             </div>
             <div className={styles.content}>
                 <List data={data} setData={setData}/>
             </div>
-            <Pagination data={data} setCurrentPage={setCurrentPage}/>
+            <Pagination data={data} setCurrentPage={setCurrentPage} currentPage={currentPage}/>
         </div>
     );
 }

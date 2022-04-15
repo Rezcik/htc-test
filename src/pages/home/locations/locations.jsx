@@ -7,17 +7,20 @@ import {Title} from "../../../components/title/title";
 import {Input} from "../../../components/input/input";
 
 export function Locations() {
-    const [currentPage, setCurrentPage] = useState('https://rickandmortyapi.com/api/location');
-    const [data, setData] = useState({ results: [] });
     const [filter, setFilter] = useState({name: '', type: '', dimension: ''});
+    const [currentPage, setCurrentPage] = useState('https://rickandmortyapi.com/api/location/?');
+    const [data, setData] = useState({ results: [] });
 
     const setQuery = (filterName) => (value) => {
         setFilter(filter => ({...filter, [filterName]: filterName + '=' + value + '&'}));
-        setCurrentPage(`https://rickandmortyapi.com/api/location/?${filter.name + filter.type + filter.dimension}`);
     };
 
     useEffect(() =>{
-        {Fetch({currentPage, setData})}
+        setCurrentPage(`https://rickandmortyapi.com/api/location/?${filter.name + filter.type + filter.dimension}`);
+    },[filter]);
+
+    useEffect(() =>{
+        Fetch({currentPage, setData})
     },[currentPage]);
 
     return (
@@ -44,7 +47,7 @@ export function Locations() {
             <div className={styles.content}>
                 <List data={data}/>
             </div>
-            <Pagination data={data} setCurrentPage={setCurrentPage}/>
+            <Pagination data={data} setCurrentPage={setCurrentPage} currentPage={currentPage}/>
         </div>
     );
 }
