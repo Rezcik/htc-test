@@ -1,7 +1,7 @@
 .card {
     position: relative;
 
-    margin: 30px 0;
+    margin: 15px 0;
     padding: 11px 30px;
 
     max-width: 570px;
@@ -99,11 +99,15 @@
     border-radius: 50%;
     border: 1px solid rgba(162, 162, 162, 0.6);
 
+    opacity: 0;
     cursor: pointer;
     transition: 0.2s linear;
 }
 .favorites:hover {
     background: #008BDA;
+}
+.card:hover .favorites{
+    opacity: 1;
 }
 .save {
     background: #00CA51 !important;
