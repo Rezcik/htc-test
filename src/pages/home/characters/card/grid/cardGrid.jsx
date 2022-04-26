@@ -1,14 +1,14 @@
-import React, {useState} from "react";
+import React, {useState} from 'react';
 import stylesGrid from './grid.module.css';
 import card from '../card.module.css';
-import classNames from "classnames";
+import classNames from 'classnames';
 
 import {ReactComponent as AddFavourites} from '../../../../../assets/icon/addFavourites.svg'
 import {ReactComponent as Like} from '../../../../../assets/icon/like.svg'
-import {setStorage} from "../../../../../components/storage/storage";
+import {setStorage} from '../../../../../components/storage/storage';
 
 
-export function CardGrid({img, name, species, origin, location, gender, episode, status, direction, sort, url}) {
+export function CardGrid({img, name, species, origin, location, status, sort, url}) {
     const [save, setSave] = useState(false);
     let statusColor = null;
     switch (status) {

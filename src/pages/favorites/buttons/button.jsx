@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './button.module.css';
-import {Link} from "react-router-dom";
+import {Link} from 'react-router-dom';
 
 export function Button({to, title}) {
     return (

@@ -1,10 +1,10 @@
-import React, {useEffect, useState} from "react";
-import styles from "./locations.module.css";
-import {List} from "./list/list";
-import {Pagination} from "../../../components/pagination/pagination";
-import {Fetch} from "../fetch/fetch";
-import {Title} from "../../../components/title/title";
-import {Input} from "../../../components/input/input";
+import React, {useEffect, useState} from 'react';
+import styles from './locations.module.css';
+import {List} from './list/list';
+import {Pagination} from '../../../components/pagination/pagination';
+import {Fetch} from '../fetch/fetch';
+import {Title} from '../../../components/title/title';
+import {Input} from '../../../components/input/input';
 
 export function Locations() {
     const [filter, setFilter] = useState({name: '', type: '', dimension: ''});

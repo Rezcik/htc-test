@@ -1,10 +1,10 @@
 import React from 'react';
 import styles from './about.module.css';
-import {Title} from "../../components/title/title";
+import {Title} from '../../components/title/title';
 
 export function About() {
     return (
-        <div className={styles.about}>
+        <div>
             <Title name='О проекте'/>
             <div className={styles.wrapper}>
                 <p className={styles.text}>Данный проект создан по мотивам приключений Рика и Морти.

@@ -1,14 +1,12 @@
-import React, {useEffect, useRef, useState} from "react";
-import {Title} from "../../../components/title/title";
+import React, {useEffect, useState} from 'react';
+import {Title} from '../../../components/title/title';
 import styles from './characters.module.css';
-import {Input} from "../../../components/input/input";
-import {Select} from "../../../components/select/select";
-import {Direction} from "../../../components/direction/direction";
-import {List} from "./list/list";
-import {Pagination} from "../../../components/pagination/pagination";
-import {Fetch} from "../fetch/fetch";
-import axios from "axios";
-
+import {Input} from '../../../components/input/input';
+import {Select} from '../../../components/select/select';
+import {Direction} from '../../../components/direction/direction';
+import {List} from './list/list';
+import {Pagination} from '../../../components/pagination/pagination';
+import {Fetch} from '../fetch/fetch';
 
 export function Characters() {
     const [direction, setDirection] = useState(true);
@@ -35,7 +33,7 @@ export function Characters() {
                 <Input title='Поиск по имени'
                        placeholder='Введите имя персонажа'
                        width={true}
-                       setFilter={setQuery("name")}
+                       setFilter={setQuery('name')}
                 />
 
                 <Input title='Поиск по расе'
@@ -45,7 +43,7 @@ export function Characters() {
                 />
                 <Select title='Поиск по статусу'
                         placeholder='Выберете статус персонажа'
-                        setFilter={setQuery("status")}
+                        setFilter={setQuery('status')}
                 />
                 <Direction direction={direction} setDirection={setDirection}/>
             </div>

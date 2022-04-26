@@ -1,5 +1,5 @@
-import React from "react";
-import {useNavigate} from "react-router";
+import React from 'react';
+import {useNavigate} from 'react-router';
 
 import styles from './title.module.css';
 import {ReactComponent as Back} from '../../assets/icon/back.svg';

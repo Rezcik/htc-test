@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import styles from './user.module.css';
-import {Button} from "./button/button";
-import {Modal} from "../../modal/modal";
+import {Button} from './button/button';
+import {Modal} from '../../modal/modal';
 
 export function User() {
     const[modal, setModal] = useState({type: '', active: false});

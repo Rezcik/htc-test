@@ -1,7 +1,7 @@
-import React, {useEffect, useRef, useState} from "react";
+import React, {useEffect, useRef, useState} from 'react';
 import styles from './pagination.module.css';
 import { ReactComponent as Arrow } from '../../assets/icon/arrow.svg';
-import classNames from "classnames";
+import classNames from 'classnames';
 
 export function Pagination({data, setCurrentPage, currentPage}) {
     const [active, setActive] = useState(1);

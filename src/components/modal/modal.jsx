@@ -1,10 +1,10 @@
-import React, { useState } from "react";
-import styles from "./modal.module.css";
-import { Input, Validation } from "./input/input";
-import classNames from "classnames";
-import rick from "../../assets/img/rick.png"
-import morty from "../../assets/img/morty.png"
-import rick_green from "../../assets/img/rick_green.png"
+import React, { useState } from 'react';
+import styles from './modal.module.css';
+import { Input, Validation } from './input/input';
+import classNames from 'classnames';
+import rick from '../../assets/img/rick.png';
+import morty from '../../assets/img/morty.png';
+import rick_green from '../../assets/img/rick_green.png';
 
 export const Modal = ({modal, setModal}) => {
     const [user, setUser] = useState({login: '', password: '', name: '', surname: '', email: ''})
@@ -12,7 +12,7 @@ export const Modal = ({modal, setModal}) => {
     if(!modal.active) return null;
     return (
         <div className={classNames(modal.active ? styles.active : '', styles.wrapper)}
-             onClick={(e) => {
+             onClick={() => {
                  setModal({...modal, active: false})
              }}>
             <div onClick={(e) => e.stopPropagation()}>

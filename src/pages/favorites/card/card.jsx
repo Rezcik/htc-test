@@ -1,12 +1,12 @@
-import React, {useState} from "react";
+import React from 'react';
 import stylesGrid from './grid.module.css';
 import card from '../card.module.css';
-import classNames from "classnames";
+import classNames from 'classnames';
 
 import {ReactComponent as LineAddFavorites} from '../../../../../assets/icon/addFavorites.svg'
 
 
-export function Card({img, name, species, origin, location, gender, episode, status, direction}) {
+export function Card({img, name, species, origin, location, status}) {
     let statusColor = null;
     switch (status) {
         case 'Dead' : status = 'Мертв'; statusColor = card.dead; break;

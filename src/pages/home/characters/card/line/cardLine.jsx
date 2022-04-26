@@ -1,12 +1,12 @@
-import React, {useEffect, useState} from "react";
+import React, {useEffect, useState} from 'react';
 import stylesLine from './line.module.css';
 import card from '../card.module.css';
-import classNames from "classnames";
+import classNames from 'classnames';
 
 import {ReactComponent as AddFavourites} from '../../../../../assets/icon/addFavourites.svg'
 import {ReactComponent as Like} from '../../../../../assets/icon/like.svg'
-import {setStorage} from "../../../../../components/storage/storage";
-import axios from "axios";
+import {setStorage} from '../../../../../components/storage/storage';
+import axios from 'axios';
 
 
 export function CardLine({img, name, species, origin, location, gender, episode, status, sort, url}) {

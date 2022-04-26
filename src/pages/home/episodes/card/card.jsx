@@ -1,11 +1,11 @@
-import React, {useEffect, useState} from "react";
-import axios from "axios";
+import React, {useEffect, useState} from 'react';
+import axios from 'axios';
 import card from './card.module.css';
 
 import {ReactComponent as AddFavourites} from '../../../../assets/icon/addFavourites.svg'
-import classNames from "classnames";
-import {ReactComponent as Like} from "../../../../assets/icon/like.svg";
-import {setStorage} from "../../../../components/storage/storage";
+import classNames from 'classnames';
+import {ReactComponent as Like} from '../../../../assets/icon/like.svg';
+import {setStorage} from '../../../../components/storage/storage';
 
 
 export function Card({name, episode, air_date, characters, sort, url}) {

@@ -1,6 +1,6 @@
-import React, {useState} from "react";
-import styles from "./select.module.css";
-import classNames from "classnames";
+import React, {useState} from 'react';
+import styles from './select.module.css';
+import classNames from 'classnames';
 import svg from '../../assets/icon/show.svg';
 
 export function Select({title, placeholder, setFilter}) {

@@ -1,6 +1,6 @@
-import React from "react";
-import styles from "./input.module.css";
-import classNames from "classnames";
+import React from 'react';
+import styles from './input.module.css';
+import classNames from 'classnames';
 
 export function Input({title, placeholder, width, setFilter}) {
     return (

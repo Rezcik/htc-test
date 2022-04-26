@@ -1,4 +1,4 @@
-import React, {useEffect, useRef, useState} from "react";
+import React from 'react';
 
 export function setStorage(type, url, save, setSave) {
 

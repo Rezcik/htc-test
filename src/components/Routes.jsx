@@ -1,14 +1,14 @@
-import { Route, Routes } from "react-router-dom";
-import React from "react";
+import { Route, Routes } from 'react-router-dom';
+import React from 'react';
 
 import styles from './content.module.css';
 import {Home} from '../pages/home/home';
-import {Characters} from "../pages/home/characters/characters";
-import {Locations} from "../pages/home/locations/locations";
-import {Episodes} from "../pages/home/episodes/episodes";
-import {About} from "../pages/about/about";
-import {Favourites} from "../pages/favorites/favourites";
-import {NoMatch} from "../pages/noMatch/noMatch";
+import {Characters} from '../pages/home/characters/characters';
+import {Locations} from '../pages/home/locations/locations';
+import {Episodes} from '../pages/home/episodes/episodes';
+import {About} from '../pages/about/about';
+import {Favourites} from '../pages/favorites/favourites';
+import {NoMatch} from '../pages/noMatch/noMatch';
 
 export function Content() {
     return (
@@ -23,7 +23,7 @@ export function Content() {
                 <Route path='favourites/locations' element={<Favourites/>} />
                 <Route path='favourites/episodes' element={<Favourites/>} />
                 <Route path='about' element={<About/>} />
-                <Route path="*" element={<NoMatch/>} />
+                <Route path='*' element={<NoMatch/>} />
             </Routes>
         </div>
     );

@@ -1,7 +1,7 @@
-import React, {useState} from "react";
-import styles from "./input.module.css";
-import {ReactComponent as Show} from "../../../assets/icon/show_pass.svg"
-import {ReactComponent as Hide} from "../../../assets/icon/hide_pass.svg"
+import React, {useState} from 'react';
+import styles from './input.module.css';
+import {ReactComponent as Show} from '../../../assets/icon/show_pass.svg';
+import {ReactComponent as Hide} from '../../../assets/icon/hide_pass.svg';
 
 export function Input({placeholder, type, max, min, user, setUser, setType, hide}) {
     const [visible, setVisible] = useState(false);

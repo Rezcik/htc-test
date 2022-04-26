@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './button.module.css';
-import classNames from "classnames";
+import classNames from 'classnames';
 
 export function Button({name, type, setModal, modal}) {
 

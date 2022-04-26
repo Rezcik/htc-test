@@ -1,9 +1,9 @@
-import React, {useState} from "react";
+import React from 'react';
 import styles from './direction.module.css';
 
 import {ReactComponent as Grid} from '../../assets/icon/grid.svg';
 import {ReactComponent as Line} from '../../assets/icon/line.svg';
-import classNames from "classnames";
+import classNames from 'classnames';
 
 export function Direction({direction, setDirection}) {
 

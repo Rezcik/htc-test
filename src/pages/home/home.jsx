@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './home.module.css';
-import {Button} from "./buttons/button";
+import {Button} from './buttons/button';
 
 import character from '../../assets/img/char.png';
 import locations from '../../assets/img/loc.png';
