@@ -12,7 +12,7 @@ export function Title({name}) {
                 <Back/>
                 <span>Назад</span>
             </button>
-            <h2 className={styles.name}>{name}</h2>
+            <h1 className={styles.name}>{name}</h1>
         </div>
     );
 }
