@@ -5,6 +5,10 @@
     text-decoration: none;
     outline: none;
 }
+html {
+    margin-left: calc(100vw - 100%);
+    margin-right: 0;
+}
 @font-face {
     font-family: 'Montserrat-Medium';
     src: url('../../assets/font/Montserrat-Medium.woff2') format('woff2'),
