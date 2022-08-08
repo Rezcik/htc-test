@@ -5,23 +5,18 @@ import {Pagination} from '../../../components/pagination/pagination';
 import {Fetch} from '../fetch/fetch';
 import {Title} from '../../../components/title/title';
 import {Input} from '../../../components/input/input';
+import {useSearchParams} from 'react-router-dom';
 
 export function Episodes() {
-    const [currentPage, setCurrentPage] = useState('https://rickandmortyapi.com/api/episode/?');
+    const [currentPage, setCurrentPage] = useState(`episode/${window.location.search}`);
     const [data, setData] = useState({ results: [] });
-    const [filter, setFilter] = useState({name: '', episode: ''});
+    const [filter, setFilter] = useState({});//name: '', episode: ''
+    const [searchParams, setSearchParams] = useSearchParams(window.location.search);
 
-    const setQuery = (filterName) => (value) => {
-        setFilter(filter => ({...filter, [filterName]: filterName + '=' + value + '&'}));
-    };
-
-    useEffect(() =>{
-        setCurrentPage(`https://rickandmortyapi.com/api/episode/?${filter.name + filter.episode}`);
-    },[filter]);
-
-    useEffect(() =>{
-        Fetch({currentPage, setData})
-    },[currentPage]);
+    useEffect(() => {
+        Fetch({currentPage, searchParams, setData})
+        setSearchParams(filter);
+    },[searchParams, filter]);
 
     return (
         <div>
@@ -30,13 +25,17 @@ export function Episodes() {
                 <Input title='Поиск по названию'
                        placeholder='Введите название серии'
                        width={true}
-                       setFilter={setQuery("name")}
+                       type='name'
+                       setFilter={setFilter}
+                       filter={filter}
                 />
 
                 <Input title='Поиск по эпизоду'
                        placeholder='Введите эпизод: '
                        width={true}
-                       setFilter={setQuery("episode")}
+                       type='episode'
+                       setFilter={setFilter}
+                       filter={filter}
                 />
             </div>
             <div className={styles.content}>

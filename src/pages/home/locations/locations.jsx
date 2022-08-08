@@ -5,23 +5,18 @@ import {Pagination} from '../../../components/pagination/pagination';
 import {Fetch} from '../fetch/fetch';
 import {Title} from '../../../components/title/title';
 import {Input} from '../../../components/input/input';
+import {useSearchParams} from 'react-router-dom';
 
 export function Locations() {
-    const [filter, setFilter] = useState({name: '', type: '', dimension: ''});
-    const [currentPage, setCurrentPage] = useState('https://rickandmortyapi.com/api/location/?');
+    const [filter, setFilter] = useState({});//name: '', type: '', dimension: ''
+    const [currentPage, setCurrentPage] = useState(`location/${window.location.search}`);
     const [data, setData] = useState({ results: [] });
+    const [searchParams, setSearchParams] = useSearchParams(window.location.search);
 
-    const setQuery = (filterName) => (value) => {
-        setFilter(filter => ({...filter, [filterName]: filterName + '=' + value + '&'}));
-    };
-
-    useEffect(() =>{
-        setCurrentPage(`https://rickandmortyapi.com/api/location/?${filter.name + filter.type + filter.dimension}`);
-    },[filter]);
-
-    useEffect(() =>{
-        Fetch({currentPage, setData})
-    },[currentPage]);
+    useEffect(() => {
+        Fetch({currentPage, searchParams, setData})
+        setSearchParams(filter);
+    },[searchParams, filter]);
 
     return (
         <div>
@@ -30,18 +25,24 @@ export function Locations() {
                 <Input title='Поиск по названию'
                        placeholder='Введите название локации'
                        width={true}
-                       setFilter={setQuery("name")}
+                       type='name'
+                       setFilter={setFilter}
+                       filter={filter}
                 />
 
                 <Input title='Поиск по типу'
                        placeholder='Введите тип локации'
                        width={true}
-                       setFilter={setQuery("type")}
+                       type='type'
+                       setFilter={setFilter}
+                       filter={filter}
                 />
                 <Input title='Поиск по измерению'
                        placeholder='Введите измерение'
                        width={true}
-                       setFilter={setQuery("dimension")}
+                       type='dimension'
+                       setFilter={setFilter}
+                       filter={filter}
                 />
             </div>
             <div className={styles.content}>

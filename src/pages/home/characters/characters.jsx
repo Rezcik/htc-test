@@ -7,24 +7,19 @@ import {Direction} from '../../../components/direction/direction';
 import {List} from './list/list';
 import {Pagination} from '../../../components/pagination/pagination';
 import {Fetch} from '../fetch/fetch';
+import {useSearchParams} from 'react-router-dom';
 
 export function Characters() {
     const [direction, setDirection] = useState(true);
-    const [filter, setFilter] = useState({name: '', species: '', status: ''});
-    const [currentPage, setCurrentPage] = useState('https://rickandmortyapi.com/api/character/?');
+    const [filter, setFilter] = useState({}); //name: '', species: '', status: ''
+    const [currentPage, setCurrentPage] = useState(`character/${window.location.search}`);
     const [data, setData] = useState({ results: [] });
-
-    const setQuery = (filterName) => (value) => {
-        setFilter(filter => ({...filter, [filterName]: filterName + '=' + value + '&'}));
-    };
+    const [searchParams, setSearchParams] = useSearchParams(window.location.search);
 
     useEffect(() => {
-        setCurrentPage(`https://rickandmortyapi.com/api/character/?${filter.name + filter.species + filter.status}`);
-    }, [filter]);
-
-    useEffect(() => {
-        Fetch({currentPage, setData})
-    },[currentPage]);
+        Fetch({currentPage, searchParams, setData})
+        setSearchParams(filter);
+    },[searchParams, filter]);
 
     return (
         <div className={styles.characters}>
@@ -33,17 +28,22 @@ export function Characters() {
                 <Input title='Поиск по имени'
                        placeholder='Введите имя персонажа'
                        width={true}
-                       setFilter={setQuery('name')}
+                       type='name'
+                       setFilter={setFilter}
+                       filter={filter}
                 />
 
                 <Input title='Поиск по расе'
                        placeholder='Введите расу персонажа'
                        width={false}
-                       setFilter={setQuery("species")}
+                       type='species'
+                       setFilter={setFilter}
+                       filter={filter}
                 />
                 <Select title='Поиск по статусу'
                         placeholder='Выберете статус персонажа'
-                        setFilter={setQuery('status')}
+                        type='status'
+                        setFilter={setFilter}
                 />
                 <Direction direction={direction} setDirection={setDirection}/>
             </div>
