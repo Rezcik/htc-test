@@ -1,4 +1,4 @@
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, Navigate } from 'react-router-dom';
 import React from 'react';
 
 import styles from './content.module.css';
@@ -14,7 +14,8 @@ export function Content() {
     return (
         <div className={styles.content}>
             <Routes>
-                <Route index path='home' element={<Home/>}/>
+                <Route index path='/' element={<Navigate to="/home" /> }/>
+                <Route path='home' element={<Home/>}/>
                 <Route path='home/characters' element={<Characters/>}/>
                 <Route path='home/locations' element={<Locations/>}/>
                 <Route path='home/episodes' element={<Episodes/>}/>
