@@ -6,9 +6,10 @@ import classNames from 'classnames';
 import {ReactComponent as AddFavourites} from '../../../../../assets/icon/addFavourites.svg'
 import {ReactComponent as Like} from '../../../../../assets/icon/like.svg'
 import {setStorage} from '../../../../../components/storage/storage';
+import {CardItem} from "../cardItem";
 
 
-export function CardGrid({img, name, species, origin, location, status, sort, url}) {
+export function CardGrid({image, name, species, origin, location, status, sort, url}) {
     const [save, setSave] = useState(false);
     let statusColor = null;
     switch (status) {
@@ -19,23 +20,14 @@ export function CardGrid({img, name, species, origin, location, status, sort, ur
 
     return (
         <div className={classNames(card.card, stylesGrid.card)}>
-            <img src={img} className={card.img}/>
+            <img src={image} className={card.img}/>
             <div>
                 <p className={card.name}>{name}</p>
                 <div className={card.wrapper}>
                     <div className={card.column}>
-                        <p className={card.item}>
-                            <span className={card.title}>Раса:</span>
-                            <span className={card.value}>{species}</span>
-                        </p>
-                        <p className={card.item}>
-                            <span className={card.title}>Место происхождения:</span>
-                            <span className={card.value}>{origin}</span>
-                        </p>
-                        <p className={card.item}>
-                            <span className={card.title}>Последняя локация:</span>
-                            <span className={card.value}>{location}</span>
-                        </p>
+                        <CardItem title={'Раса:'} value={species}/>
+                        <CardItem title={'Место происхождения:'} value={origin.name}/>
+                        <CardItem title={'Последняя локация:'} value={location.name}/>
                     </div>
                     <div className={stylesGrid.column}>
                         <button className={classNames(save? stylesGrid.save : '', stylesGrid.favorites)}

@@ -9,29 +9,9 @@ export function List({data, direction}) {
         <div className={styles.list}>
             {data.results?.map(result => (
                 direction?
-                <CardLine key={result.id}
-                          img={result.image}
-                          name={result.name}
-                          species={result.species}
-                          status={result.status}
-                          origin={result.origin.name}
-                          location={result.location.name}
-                          gender={result.gender}
-                          episode={result.episode}
-                          sort={'character'}
-                          url={result.url}
-                />
+                <CardLine key={result.id} {...result}/>
                 :
-                <CardGrid key={result.id}
-                          img={result.image}
-                          name={result.name}
-                          species={result.species}
-                          status={result.status}
-                          origin={result.origin.name}
-                          location={result.location.name}
-                          sort={'character'}
-                          url={result.url}
-                />
+                <CardGrid key={result.id} {...result}/>
             ))}
         </div>
     );

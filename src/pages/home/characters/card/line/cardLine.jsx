@@ -7,9 +7,10 @@ import {ReactComponent as AddFavourites} from '../../../../../assets/icon/addFav
 import {ReactComponent as Like} from '../../../../../assets/icon/like.svg'
 import {setStorage} from '../../../../../components/storage/storage';
 import axios from 'axios';
+import {CardItem} from "../cardItem";
 
 
-export function CardLine({img, name, species, origin, location, gender, episode, status, sort, url}) {
+export function CardLine({image, name, species, origin, location, gender, episode, status, sort, url}) {
     const [save, setSave] = useState(false);
     const [episodes, setEpisodes] = useState([]);
     const [range, setRange] = useState([]);
@@ -44,33 +45,18 @@ export function CardLine({img, name, species, origin, location, gender, episode,
     }
     return (
         <div className={classNames(card.card, stylesLine.card)}>
-            <img src={img} className={card.img} alt='person'/>
+            <img src={image} className={card.img} alt='person'/>
             <div>
                 <p className={card.name}>{name}</p>
                 <div className={card.wrapper}>
                     <div className={card.column}>
-                        <p className={card.item}>
-                            <span className={card.title}>Раса:</span>
-                            <span className={card.value}>{species}</span>
-                        </p>
-                        <p className={card.item}>
-                            <span className={card.title}>Место происхождения:</span>
-                            <span className={card.value}>{origin}</span>
-                        </p>
-                        <p className={card.item}>
-                            <span className={card.title}>Последняя локация:</span>
-                            <span className={card.value}>{location}</span>
-                        </p>
+                        <CardItem title={'Раса:'} value={species}/>
+                        <CardItem title={'Место происхождения:'} value={origin.name}/>
+                        <CardItem title={'Последняя локация:'} value={location.name}/>
                     </div>
                     <div className={card.column}>
-                        <p className={card.item}>
-                            <span className={card.title}>Пол:</span>
-                            <span className={card.value}>{gender}</span>
-                        </p>
-                        <p className={card.item}>
-                            <span className={card.title}>Эпизоды:</span>
-                            <span className={card.value}>{range.join(', ')}</span>
-                        </p>
+                        <CardItem title={'Пол:'} value={gender}/>
+                        <CardItem title={'Эпизоды:'} value={range.join(', ')}/>
                     </div>
                     <div className={stylesLine.column}>
                         <ul className={statusColor}>
@@ -81,13 +67,16 @@ export function CardLine({img, name, species, origin, location, gender, episode,
                         <button className={classNames(save? stylesLine.save : '', stylesLine.favorites)}
                                 onClick={() => setStorage(sort, url, save, setSave)}>
                             {save ?
-                                <Like/>
+                                <>
+                                    <Like/>
+                                    <span>В избранном</span>
+                                </>
                                 :
-                                <AddFavourites/>
+                                <>
+                                    <AddFavourites/>
+                                    <span>Добавить в избранное</span>
+                                </>
                             }
-                            <span>
-                                Добавить в избранное
-                            </span>
                         </button>
                     </div>
                 </div>
