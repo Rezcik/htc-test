@@ -6,7 +6,7 @@ import {Select} from '../../../components/select/select';
 import {Direction} from '../../../components/direction/direction';
 import {List} from './list/list';
 import {Pagination} from '../../../components/pagination/pagination';
-import {Fetch} from '../fetch/fetch';
+import {getDataAPI} from '../fetch/getDataAPI';
 import {useSearchParams} from 'react-router-dom';
 
 export function Characters() {
@@ -17,7 +17,7 @@ export function Characters() {
     const [searchParams, setSearchParams] = useSearchParams(window.location.search);
 
     useEffect(() => {
-        Fetch({currentPage, searchParams, setData})
+        getDataAPI({currentPage, searchParams, setData})
         setSearchParams(filter);
     },[searchParams, filter]);
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 
-export async function Fetch({currentPage, searchParams, setData}) {
+export async function getDataAPI({currentPage, searchParams, setData}) {
     const apiURL = new URL(currentPage, 'https://rickandmortyapi.com/api/');
 
     for(let [name, value] of searchParams) {

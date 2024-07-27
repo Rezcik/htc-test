@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import styles from './locations.module.css';
 import {List} from './list/list';
 import {Pagination} from '../../../components/pagination/pagination';
-import {Fetch} from '../fetch/fetch';
+import {getDataAPI} from '../fetch/getDataAPI';
 import {Title} from '../../../components/title/title';
 import {Input} from '../../../components/input/input';
 import {useSearchParams} from 'react-router-dom';
@@ -14,7 +14,7 @@ export function Locations() {
     const [searchParams, setSearchParams] = useSearchParams(window.location.search);
 
     useEffect(() => {
-        Fetch({currentPage, searchParams, setData})
+        getDataAPI({currentPage, searchParams, setData})
         setSearchParams(filter);
     },[searchParams, filter]);
 
